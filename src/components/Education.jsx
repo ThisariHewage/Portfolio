@@ -1,18 +1,25 @@
 export default function Education() {
+  const education = [
+    {
+      institution: "Your University",
+      degree: "BSc (Hons) in Software Engineering",
+      period: "2022 - Present",
+      description: "Focusing on full-stack development, software architecture, and algorithm design."
+    }
+  ];
+
   return (
-    <section id="education" className="p-10 max-w-3xl mx-auto">
-      <h2 className="text-2xl font-bold">Education</h2>
-
-      <div className="mt-4">
-        <p className="font-semibold">Bachelor of Science in Software Engineering (2023 - Present)</p>
-        <p>University of Kelaniya | CGPA: 3.2/4.0</p>
-        <p className="text-sm text-gray-600 dark:text-gray-300">Specializing in Web Development, Data Science, Business Engineering, Health Information</p>
-      </div>
-
-      <div className="mt-4">
-        <p className="font-semibold">GCE Advanced Level (2019 - 2022)</p>
-        <p>Ananda Sastralaya National School | Z-Score: 1.5423</p>
-        <p className="text-sm text-gray-600 dark:text-gray-300">Physical Science Stream</p>
+    <section id="education" className="p-10 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <h2 className="text-3xl font-bold text-center mb-8">Education</h2>
+      <div className="max-w-4xl mx-auto space-y-6">
+        {education.map((edu, index) => (
+          <div key={index} className="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500">
+            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">{edu.degree}</h3>
+            <p className="font-medium text-gray-700 dark:text-gray-200">{edu.institution}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{edu.period}</p>
+            <p className="text-gray-600 dark:text-gray-300">{edu.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
